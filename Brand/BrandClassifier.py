@@ -3,14 +3,14 @@ import torch.nn as nn
 from transformers import BertModel
 
 class ThresholdClassifier(nn.Module):
-    def __init__(self, freeze=True):
+    def __init__(self, freeze=True, bert_model='bert-base-chinese'):
         super(ThresholdClassifier, self).__init__()
-        self.bert_model = BertModel.from_pretrained('bert-base-chinese')
+        self.bert_model = BertModel.from_pretrained(bert_model)
         self.classifier = nn.Sequential(
             nn.Linear(768, 512),
-            nn.ReLU(),
+            nn.Tanh(),
             nn.Linear(512, 256),
-            nn.ReLU(),
+            nn.Tanh(),
             nn.Linear(256, 121)    
         )
         

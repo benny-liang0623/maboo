@@ -11,7 +11,7 @@ class BrandDataset(Dataset):
     
     def __getitem__(self, index):
         text = self.X[index]
-        inputs = self.tokenizer.encode_plus(
+        inputs = self.tokenizer(
             text,
             None,
             add_special_tokens=True,
