@@ -1,3 +1,4 @@
+from os import truncate
 import torch
 from torch.utils.data import Dataset
 
@@ -14,9 +15,11 @@ class BrandDataset(Dataset):
         inputs = self.tokenizer(
             text,
             None,
+            truncation=True,
+            padding='max_length',
             add_special_tokens=True,
             max_length=self.max_length,
-            pad_to_max_length=True,
+            # pad_to_max_length=True,
             return_token_type_ids=True
         )
         ids = inputs['input_ids']
