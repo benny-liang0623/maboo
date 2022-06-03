@@ -14,3 +14,4 @@ class BaseNet(nn.Module):
     
     def summary(self):
         net_parameters = filter(lambda p: p.requires_grad, self.parameters())
+        params = sum([np.prod(p.size()) for p in net_parameters])

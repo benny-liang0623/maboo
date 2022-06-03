@@ -3,23 +3,19 @@ import torch.nn as nn
 import torch.optim as optim
 import numpy as np
 
-from .network import CVDD
+from networks.network import CVDDNet
+from base.base_trainer import BaseTrainer
+from base.base_dataset import BaseADDataset
 from sklearn.metrics import roc_auc_score
 from sklearn.cluster import KMeans
 
-class CVDDTrainer:
+class CVDDTrainer(BaseTrainer):
     
-    def __init__(self, optimizer_name: str = 'adam', lr: float = 0.001, n_epochs: int = 150, lr_milestones: tuple = (),
-                 batch_size: int = 128, lambda_p: float = 0.0, alpha_scheduler: str = 'hard',
+    def __init__(self, optimizer_name: str = 'adam', lr: float = 0.001, n_epochs: int=150, lr_milestones: tuple=(),
+                 batch_size: int = 128, lambda_p: float = 0.0, alpha_scheduler: str='hard',
                  weight_decay: float = 1e-6, device: str = 'cuda', n_jobs_dataloader: int = 0):
-        
-        self.optimizer_name = optimizer_name
-        self.lr = lr
-        self.lr_milestones = lr_milestones
-        self.batch_size = batch_size
-        self.weight_decay = weight_decay
-        self.device = device
-        self.n_jobs_dataloader = n_jobs_dataloader
+        super().__init__(optimizer_name, lr, n_epochs, lr_milestones, batch_size, weight_decay, device,
+                         n_jobs_dataloader)
         
         self.lambda_p = lambda_p
         self.c = None
@@ -46,10 +42,12 @@ class CVDDTrainer:
         if alpha_scheduler == 'hard':
             self.alphas = [100.0] * 4
         
-    def train(self, train_loader, net: CVDD):
+    def train(self, dataset:BaseADDataset, net: CVDDNet):
         
         net = net.to(self.device)
         attention_heads = net.attention_heads
+        
+        train_loader, _ = dataset.loaders(batch_size=self.batch_size, num_workers=self.n_jobs_dataloader)
         
         net.c.data = torch.from_numpy(
             initialize_context_vectors(net, train_loader, self.device)[np.newaxis, :]).to(self.device)
@@ -81,8 +79,8 @@ class CVDDTrainer:
                 
                 cosine_dists, context_weights, A = net(text_batch)
                 scores = context_weights * cosine_dists
-                # scores.shape = (batch_size, n_attention_heads)
-                # A.shape = (batch_size, n_attention_heads, sentence_length)
+                # scores.shape = (batch_size, attention_heads)
+                # A.shape = (batch_size, attention_heads, sentence_length)
                 
                 # get orthogonality penalty: P = (CCT - I)
                 I = torch.eye(attention_heads).to(self.device)
@@ -117,10 +115,12 @@ class CVDDTrainer:
         
         return net
 
-    def test(self, val_loader, net, ad_score='context_dist_mean'):
+    def test(self, dataset: BaseADDataset, net, ad_score='context_dist_mean'):
         
         net = net.to(self.device)
         attention_heads = net.attention_heads
+        
+        _, val_loader = dataset.loaders(batch_size=self.batch_size, num_workers=self.n_jobs_dataloader)
         
         epoch_loss = 0.0
         n_batches = 0
@@ -178,7 +178,7 @@ class CVDDTrainer:
         scores = np.array(scores)
         
         if np.sum(labels) > 0:
-            best_content = None
+            best_context = None
             if ad_score == 'context_dist_mean':
                 self.test_auc = roc_auc_score(labels, scores)
             if ad_score == 'context_best':
@@ -188,13 +188,16 @@ class CVDDTrainer:
                     print(auc_candidate)
                     if auc_candidate > self.test_auc:
                         self.test_auc = auc_candidate
-                        best_content = context
+                        best_context = context
                     else:
                         pass
         else:
             best_context = None
             self.test_auc = 0.0
-
+        
+        print(f'Test Loss: {(epoch_loss/n_batches):.6f}')
+        print(f'Test AUC: {(100*self.test_auc):.2f}')
+        print('Finished validation')
 
 def initialize_context_vectors(net, train_loader, device):
     

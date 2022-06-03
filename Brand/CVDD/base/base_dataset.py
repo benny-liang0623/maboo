@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from torch.utils.data import Dataloader
+from torch.utils.data import DataLoader
 
 class BaseADDataset(ABC):
     
