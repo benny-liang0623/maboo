@@ -1,6 +1,6 @@
 import torch.nn as nn
 
-from transformers import BertModel
+from transformers import BertModel, XLMRobertaModel
 
 
 class BaselineClassifier(nn.Module):
@@ -11,7 +11,7 @@ class BaselineClassifier(nn.Module):
     '''
     def __init__(self, class_num, freeze=True, bert_model='bert-base-chinese'):
         super(BaselineClassifier, self).__init__()
-        self.bert_model = BertModel.from_pretrained(bert_model)
+        self.bert_model = XLMRobertaModel.from_pretrained(bert_model)
         self.classifier = nn.Sequential(
             nn.Linear(768, class_num),
             # nn.Tanh(),
@@ -40,13 +40,13 @@ class DeepClassifier(nn.Module):
     '''
     def __init__(self, class_num, freeze=True, bert_model='bert-base-chinese'):
         super(DeepClassifier, self).__init__()
-        self.bert_model = BertModel.from_pretrained(bert_model)
+        self.bert_model = XLMRobertaModel.from_pretrained(bert_model)
         self.classifier = nn.Sequential(
-            nn.Linear(768, 512),
-            nn.Tanh(),
-            nn.Linear(512, 256),
-            nn.Tanh(),
-            nn.Linear(256, class_num)    
+            nn.Linear(768, 1024),
+            nn.ReLU(),
+            # nn.Linear(512, 256),
+            # nn.Tanh(),
+            nn.Linear(1024, class_num)    
         )
         
         if freeze:
