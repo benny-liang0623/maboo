@@ -33,5 +33,5 @@ def get_brand_name(keyword):
 
     return None
 
-brand_name = get_brand_name("【FORTE】台塑生醫BEAUTY17益菌美10包新春限定8+1組(加贈安瓶1.5ml隨機出貨)")
+brand_name = get_brand_name("農心泡菜味拉麵")
 print(brand_name)
