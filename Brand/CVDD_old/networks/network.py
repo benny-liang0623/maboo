@@ -23,10 +23,10 @@ class CVDDNet(BaseNet):
         
         self.alpha = 0.0
     
-    def forward(self, x):
+    def forward(self, input_ids, attention_mask):
         
         # Need to fix here
-        hidden = self.pretrained_model(x)
+        hidden = self.pretrained_model(input_ids, attention_mask)
         # hidden.shape = (sentence_length, batch_size, hidden_size)
         
         M, A = self.self_attention(hidden)

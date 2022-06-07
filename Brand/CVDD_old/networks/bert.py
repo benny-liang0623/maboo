@@ -14,10 +14,10 @@ class BERT(nn.Module):
         for param in self.bert.parameters():
             param.requires_grad = False
     
-    def forward(self, x):
+    def forward(self, input_ids, attention_mask):
         self.bert.eval()
-        x = self.bert(x.transpose(0, 1))
+        x = self.bert(input_ids, attention_mask)
         hidden = x[0].transpose(0, 1)
-        # hidden.shape = (batch_size, sentence_length, hidden_size)
+        # hidden.shape = (sentence_length, batch_size, hidden_size)
         
         return hidden
