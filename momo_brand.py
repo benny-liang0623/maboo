@@ -1,6 +1,6 @@
 from bs4 import BeautifulSoup
 import requests as rq
-
+import time
 
 def get_brand_name(keyword):
 
@@ -13,25 +13,23 @@ def get_brand_name(keyword):
             table =  soup.find_all('li' ,attrs={"class":"goodsItemLi" })[0]
             products = table.find_all("a")
             for product in products:
-                href = product.get("href")
-                if "http" in href:
-                    continue
-                else:
-                    in_url  = 'https://m.momoshop.com.tw'+href
-                    break
+                try:
+                  href = product.get("href")
+                  if "http" not in href:
+                      in_url  = 'https://m.momoshop.com.tw'+href
+                      response = rq.get(in_url, headers=headers)
+                      if response.status_code == 200:
+                          soup = BeautifulSoup(response.text, features="html.parser")
+                          brand_name = soup.find_all('a' ,attrs={"class":"brandNameTxt" })[0]
+                          return brand_name.get_text()
+                except:
+                    pass
+                time.sleep(0.1)
+        return None
     except:
-        pass
+        return None
 
-    try:
-        response = rq.get(in_url, headers=headers)
-        if response.status_code == 200:
-            soup = BeautifulSoup(response.text, features="html.parser")
-            brand_name = soup.find_all('a' ,attrs={"class":"brandNameTxt" })[0]
-            return brand_name.get_text()
-    except:
-        pass
-
-    return None
-
-brand_name = get_brand_name("農心泡菜味拉麵")
+brand_name = get_brand_name("提提研新極輕絲角鯊烷面膜")
 print(brand_name)
+
+
