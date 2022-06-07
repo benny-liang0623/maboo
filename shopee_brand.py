@@ -18,13 +18,16 @@ browser.get(url)
 cookies = pickle.load(open("cookies.pkl", "rb"))
 for cookie in cookies:
     browser.add_cookie(cookie)
-browser.get(url)
-time.sleep(1)
+
 
 keyword_list = ['提提研新極輕絲角鯊烷面膜', '姍拉娜治痘洗面乳']
 brand_list = []
 for keyword in keyword_list:
     try: 
+        # go to search page
+        browser.get(url)
+        time.sleep(1)
+
         # search product
         search_bar = browser.find_elements_by_xpath("/html/body/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/div/form/input")[0]
         search_bar.send_keys(keyword)
@@ -44,3 +47,4 @@ for keyword in keyword_list:
         brand_list.append(None)
     time.sleep(randint(1,3))
     
+print(brand_list)
