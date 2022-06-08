@@ -28,28 +28,22 @@ device = 'cuda'
 attention_size = 150
 attention_heads = 3
 lr = 0.001
-n_epochs = 50
-lr_milestones = [40]
+n_epochs = 15
+lr_milestones = [5, 10]
 lambda_p = 1.0
 alpha_scheduler = 'logarithmic'
 weight_decay = 0.5e-6
 
 # Prepare data
-data_4 = pd.read_csv('G:/Code/Python/GitHub/maboo/Brand/brand_data/brand_data_4.csv')
-data_1 = pd.read_csv('G:/Code/Python/GitHub/maboo/Brand/brand_data/brand_data_1.csv')
-data_1 = data_1.iloc[:, :2]
-valid_brand = [i for i in set(data_1['brand'].to_list())]
+train_data = pd.read_csv('G:/Code/Python/GitHub/maboo/Brand/brand_data/brand_final.csv').loc[:, ['name', 'brand']]
+test_data = pd.read_csv('G:/Code/Python/GitHub/maboo/Brand/資料/test_brand.csv').loc[:, ['name', 'brand']]
+valid_brand = [i for i in set(train_data['brand'].to_list())]
 
-data = pd.concat([data_1, data_4])
-data.reset_index(drop=True, inplace=True)
-
-valid_index = []
-for i in range(len(data)):
-    if data['brand'][i] in valid_brand:
-        data['brand'][i] = 1
-        valid_index.append(i)
+for i in range(len(train_data)):
+    if train_data['brand'][i] in valid_brand:
+        train_data['brand'][i] = 1
     else:
-        data['brand'][i] = 0
+        train_data['brand'][i] = 0
 
 X_train = data[data['brand'] == 1]['name']
 y_train = data[data['brand'] == 1]['brand']

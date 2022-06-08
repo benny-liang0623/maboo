@@ -9,3 +9,13 @@
 2022-06-08 16:25:14,149 - root - INFO - | Epoch: 006/050 || Train Loss: 0.103578 |
 2022-06-08 16:27:32,165 - root - INFO - | Epoch: 007/050 || Train Loss: 0.103459 |
 2022-06-08 16:29:51,079 - root - INFO - | Epoch: 008/050 || Train Loss: 0.103434 |
+2022-06-08 16:32:10,713 - root - INFO - | Epoch: 009/050 || Train Loss: 0.103364 |
+2022-06-08 16:34:29,285 - root - INFO - | Epoch: 010/050 || Train Loss: 0.103337 |
+2022-06-08 16:34:29,287 - root - INFO -   Temperature alpha scheduler: new alpha is 0.0001
+2022-06-08 16:36:46,513 - root - INFO - | Epoch: 011/050 || Train Loss: 0.103272 |
+2022-06-08 16:39:03,673 - root - INFO - | Epoch: 012/050 || Train Loss: 0.103237 |
+2022-06-08 16:41:21,531 - root - INFO - | Epoch: 013/050 || Train Loss: 0.103274 |
+2022-06-08 16:43:39,384 - root - INFO - | Epoch: 014/050 || Train Loss: 0.103217 |
+2022-06-08 16:45:56,741 - root - INFO - | Epoch: 015/050 || Train Loss: 0.103196 |
+2022-06-08 16:48:14,298 - root - INFO - | Epoch: 016/050 || Train Loss: 0.103191 |
+2022-06-08 16:50:30,857 - root - INFO - | Epoch: 017/050 || Train Loss: 0.103148 |
