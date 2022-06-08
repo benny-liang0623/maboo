@@ -1,0 +1,11 @@
+2022-06-08 16:09:05,197 - root - INFO - Initialize context vectors.
+2022-06-08 16:11:24,230 - root - INFO - Context vectors initialized.
+2022-06-08 16:11:24,233 - root - INFO - Start training
+2022-06-08 16:13:42,985 - root - INFO - | Epoch: 001/050 || Train Loss: 0.161783 |
+2022-06-08 16:16:01,385 - root - INFO - | Epoch: 002/050 || Train Loss: 0.108161 |
+2022-06-08 16:18:19,402 - root - INFO - | Epoch: 003/050 || Train Loss: 0.104242 |
+2022-06-08 16:20:37,840 - root - INFO - | Epoch: 004/050 || Train Loss: 0.103817 |
+2022-06-08 16:22:55,794 - root - INFO - | Epoch: 005/050 || Train Loss: 0.103634 |
+2022-06-08 16:25:14,149 - root - INFO - | Epoch: 006/050 || Train Loss: 0.103578 |
+2022-06-08 16:27:32,165 - root - INFO - | Epoch: 007/050 || Train Loss: 0.103459 |
+2022-06-08 16:29:51,079 - root - INFO - | Epoch: 008/050 || Train Loss: 0.103434 |
