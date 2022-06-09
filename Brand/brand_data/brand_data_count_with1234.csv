@@ -1,0 +1,522 @@
+brand,name,ID
+耐吉 NIKE,769,1
+adidas,724,2
+MAYBELLINE 媚比琳,635,3
+羅技 Logitech,611,4
+MENTHOLATUM 曼秀雷敦,549,1
+義美,536,2
+KATE TOKYO 凱婷,505,3
+蘋果 Apple,489,4
+高露潔,488,1
+media 媚點,482,2
+SENKA 專科,437,3
+KIRIN,433,4
+台啤,397,1
+1028,386,2
+國際牌 Panasonic,385,3
+Za,373,4
+NEW BALANCE,364,1
+essence cosmetics 艾森絲,351,2
+七星,328,3
+黑人牙膏,328,4
+澎澎,313,1
+三星 SAMSUNG,301,2
+森田藥粧,286,3
+Cellina 雪芙蘭,281,4
+康乃馨,274,1
+INTEGRATE 櫻特芮,274,2
+NIVEA 妮維雅,267,3
+農心,265,4
+蜜妮Biore,263,1
+M.A.C,261,2
+舒酸定,260,3
+SKECHERS,255,4
+白蘭氏,251,1
+NAILHOLIC,246,2
+Catrice 卡翠絲,243,3
+刷樂,242,4
+Biore 蜜妮,241,1
+熊寶貝,231,2
+舒潔,230,3
+獅王,230,4
+一匙靈,227,1
+寶僑,225,2
+CHANEL 香奈兒,225,3
+黑松 HeySong,223,4
+Bioré,223,1
+桂格 QUAKER,220,2
+可口可樂 Coca Cola,220,3
+LION 獅王,218,4
+KISSME 奇士美,217,1
+Dashing Diva,214,2
+KIEHL'S 契爾氏,213,3
+特福 Tefal,208,4
+原萃,205,1
+DR.WU 達爾膚,204,2
+UNDER ARMOUR,197,3
+聖萊西 Seeds,195,4
+Estée Lauder 雅詩蘭黛,192,1
+悅氏,190,2
+KOSE 高絲,187,3
+台酒,180,4
+茶裏王,180,1
+UCC,177,2
+多芬,176,3
+三詩達,176,4
+Switch,175,1
+海尼根,175,2
+福樂,175,3
+春風,173,4
+FILA,171,1
+Dior 迪奧,171,2
+Bifesta 碧菲絲特,169,3
+PUMA,169,4
+LANCÔME 蘭蔻,168,1
+Ariel,168,2
+Converse,167,3
+Etude House,166,4
+DHC,166,1
+阿薩姆,165,2
+NARS,164,3
+理膚寶水,163,4
+鍋寶 CookPower,163,1
+白鴿,163,2
+日清,161,3
+伯朗,160,4
+西莎 Cesar,160,1
+統一瑞穗,159,2
+heme 喜蜜,158,3
+麥香,157,4
+黑人,156,1
+岡本,156,2
+嬌生,154,3
+麗仕,152,4
+AHC,151,1
+飛利浦 Philips,151,2
+奈森克林,151,3
+CIAO,150,4
+大衛杜夫,148,1
+Curel 珂潤,148,2
+依必朗,147,3
+BOBBI BROWN 芭比波朗,147,4
+御茶園,147,1
+海倫仙度絲,146,2
+Excel,144,3
+SHISEIDO 資生堂,144,4
+桂冠,143,1
+純喫茶,139,2
+歐樂B,139,3
+植村秀 Shu uemura,138,4
+台鹽,136,1
+雲斯頓,136,2
+ettusais 艾杜紗,134,3
+小米,133,4
+寶馬,132,1
+多喝水,131,2
+美吾髮,129,3
+heme,128,4
+麗仕 LUX,128,1
+綠的,128,2
+聲寶 SAMPO,128,3
+YSL 聖羅蘭,127,4
+澡享,127,1
+萬家香,127,2
+三得利,126,3
+五月花,126,4
+來一客,126,1
+Dyson,126,2
+好自在,125,3
+REEBOK,124,4
+MISSHA,124,1
+妙管家,123,2
+無印良品,122,3
+味味一品,120,4
+Asahi,120,1
+倫敦登喜路,118,2
+德恩奈,118,3
+華碩 ASUS,116,4
+Vaseline 凡士林,116,1
+味王麵,115,2
+龜甲萬,115,3
+日立 HITACHI,114,4
+雀巢,114,1
+潘婷 PANTENE,113,2
+多芬 Dove,113,3
+CLIO 珂莉奧,112,4
+CEZANNE,111,1
+維力炸醬麵,111,2
+我的心機,110,3
+MAJOLICA MAJORCA 戀愛魔鏡,109,4
+獅王LION,107,1
+OLAY 歐蕾,106,2
+立頓,106,3
+L'OCCITANE 歐舒丹,105,4
+金蘭,105,1
+滿漢大餐,103,2
+東元 TECO,102,3
+樂迪LD,102,4
+味全林鳳營,102,1
+Acer 宏碁,102,2
+UNT,102,3
+寶路,102,4
+樂金 LG,102,1
+MKUP 美咖,101,2
+台塑生醫 Dr’s Formula,101,3
+蘇菲,100,4
+CHAMPION,100,1
+黑松,99,2
+立得清,99,3
+南僑,99,4
+葡萄王,96,1
+I'M MEME,95,2
+橘子工坊,95,3
+ORIGINS 品木宣言,95,4
+VISEE,93,1
+cheers,93,2
+午后時光,93,3
+亞瑟士 ASICS,93,4
+家樂福,92,1
+統一AB,92,2
+My Beauty Diary 我的美麗日記,92,3
+大同 TATUNG,91,4
+Avene 雅漾,91,1
+泰山,91,2
+光泉鮮乳,90,3
+飛柔 PERT,89,4
+三多,89,1
+E-books,89,2
+牛頭牌,88,3
+SHISEIDO 資生堂國際櫃,87,4
+crest,87,1
+虎牌,87,2
+靠得住,86,3
+好立善,86,4
+聲寶,86,1
+倍潔雅,86,2
+阿Q桶麵,86,3
+GATSBY,85,4
+花王 Kao,85,1
+寶亨,85,2
+台鹽生技,85,3
+尊爵,84,4
+味全,84,1
+加好寶 Classic Pets,83,2
+老媽拌麵,83,3
+WINMAX,82,4
+SANA 莎娜,82,1
+石頭科技,82,2
+美琪,82,3
+奇美 CHIMEI,80,4
+沙威隆,80,1
+REVLON 露華濃,80,2
+萬寶路,80,3
+國際牌,79,4
+Parodontax 牙周適,79,1
+永信藥品,79,2
+優生,79,3
+呂 Ryo,79,4
+貝恩,79,1
+得意,78,2
+LA ROCHE POSAY 理膚寶水,78,3
+Kirin,78,4
+莫比 Mobby,78,1
+ROHTO 樂敦,77,2
+米森 vilson,77,3
+韓國不倒翁,77,4
+希爾思 Hills,77,1
+3M,76,2
+BIODERMA 貝膚黛瑪,76,3
+愛之味,76,4
+TESCOM,76,1
+古寶無患子,76,2
+汪喵星球,75,3
+克寧 KLIM,75,4
+葛莉思 GREENS,74,1
+Sebamed 施巴,74,2
+偉嘉 whiskas,74,3
+小獅王辛巴,74,4
+LOTTO,73,1
+舒跑,73,2
+EUNYUL,73,3
+象印 ZOJIRUSHI,72,4
+ON THE BODY,72,1
+屈臣氏,72,2
+尚朋堂,71,3
+禾聯 HERAN,71,4
+統一陽光,71,1
+Kanebo 佳麗寶,70,2
+八道 PALDO,70,3
+Hydro Balance 水平衡,69,4
+百威,69,1
+國際牌 PANASONIC,69,2
+舒味思,68,3
+雷蛇 RAZER,68,4
+美津農 MIZUNO,68,1
+雪芙蘭,67,2
+奧力棒 OzBone,67,3
+光泉乳香世家,67,4
+生活,67,1
+台灣啤酒,67,2
+白人,67,3
+愛仕達 ASD,67,4
+白帥帥,66,1
+SOFINA 蘇菲娜,65,2
+艾瑪絲 AROMASE,64,3
+GUM,64,4
+愛樂齒 Ora2,63,1
+歌林 KOLIN,63,2
+艾瑪花園 Amma garden,62,3
+Cetaphil 舒特膚,62,4
+惠百施 EBISU,61,1
+維他露P,61,2
+DoggyMan,61,3
+伊藤園 Ito EN,60,4
+來復易,60,1
+寶瀅Persil,60,2
+BOTANIST,60,3
+莎啦莎啦,59,4
+tsaio 上山採藥,59,1
+包大人,59,2
+PETAL FRESH 沛特斯,58,3
+優格TOMA-PRO,58,4
+隨緣,58,1
+CLINIQUE 倩碧,58,2
+沛綠雅,58,3
+GIORGIO ARMANI 亞曼尼,58,4
+伊萊克斯 Electrolux,58,1
+華米 Amazfit,58,2
+紅牛 Red Bull,58,3
+Biotherm 碧兒泉,58,4
+Swissvita 薇佳,57,1
+realme,57,2
+佳士達,57,3
+d program 敏感話題,57,4
+大家源,57,1
+熊寶貝 SNUGGLE,57,2
+Mdmmd,56,3
+西雅圖 BARISTA,56,4
+阿葵亞 AQUAIR,55,1
+狐鐳 FoxXRay,55,2
+曾拌麵,55,3
+人生製藥,55,4
+大乾麵,55,1
+Cocodor,54,2
+dejavu,54,3
+味味A,54,4
+Too cool for school,54,1
+善存,54,2
+天地合補,53,3
+Panasonic,53,4
+PALLADIO,53,1
+蘋果西打,53,2
+鍋寶,53,3
+Lab Series 雅男士,52,4
+麗奇 REACH,52,1
+K-SWISS,51,2
+光泉豆漿,51,3
+優格 TOMA-PRO,51,4
+娘家,51,1
+吶一口,51,2
+Alpecin,51,3
+百齡,51,4
+夏普 SHARP,51,1
+BHK’s,51,2
+植物的優,51,3
+聖佩黎洛,51,4
+三洋 SANLUX,50,1
+清水 shimizu,50,2
+歌林 Kolin,50,3
+4U2,50,4
+素飄香,50,1
+象印,50,2
+BCL,49,3
+Junkisei Prime 潤肌精,49,4
+古寶,49,1
+豆油伯,49,2
+魔爪 Monster Energy,49,3
+Yuskin 悠斯晶,49,4
+思波綺 Tsubaki,48,1
+Dove 多芬,48,2
+臺虎,48,3
+ELIXIR 怡麗絲爾,48,4
+可果美,48,1
+uno,48,2
+Aveeno 艾惟諾,48,3
+咪歐 Me-O,48,4
+SEXYLOOK 西西露,48,1
+金車柏克金,48,2
+惜時 SEEDS,48,3
+惠而浦 Whirlpool,48,4
+ABSOLUTE NEW YORK 絕色紐約,48,1
+Simple 清妍,48,2
+保力達,48,3
+MIRAE 未來美,47,4
+蔻蘿蘭 klorane,47,1
+herbacin 德國小甘菊,47,2
+滿意寶寶,47,3
+丸莊,47,4
+原點 Instinct,47,1
+長壽,47,2
+米家,47,3
+優活,46,4
+Orion,46,1
+EAU耀,46,2
+清淨海,45,3
+Beauty Buffet 天天美麗,45,4
+相模,45,1
+東芝 TOSHIBA,45,2
+紅牛 RED COW,45,3
+數位,45,4
+馬爾斯,45,1
+耐嘉 KINYO,45,2
+OPPO,44,3
+台塑生醫 醫之方,44,4
+Dr.Satin,44,1
+統一寶多福 Petlife,44,2
+統一蜜豆奶,44,3
+施巴 Sebamed,44,4
+達新牌,44,1
+GARMIN,44,2
+落建,44,3
+蕾妮亞,44,4
+摩卡 Mocca,44,1
+adidas 愛迪達,44,2
+Romand,43,3
+伊絲婷 Elastine,43,4
+樂扣樂扣 LocknLock,43,1
+加倍潔,43,2
+星之冠,43,3
+冰火,43,4
+三詩達 SUNSTAR,43,1
+飲冰室茶集,43,2
+MAQuillAGE,43,3
+康貝特,43,4
+Lovita愛維他,42,1
+美士 Nutro,42,2
+艾芮克 i-Rocks,42,3
+老協珍,42,4
+李錦記,42,1
+金色三麥,42,2
+福樂自然零,41,3
+愛喜,41,4
+花仙子 Farcent,41,1
+Hair Recipe,41,2
+貓倍麗 MonPetit,41,3
+Lenovo 聯想,41,4
+西雅圖,41,1
+水平衡,41,2
+法米納 Farmina,41,3
+萊萃美,41,4
+YUBICO,41,1
+百事可樂 PEPSI,40,2
+比菲多質立,40,3
+花香5,40,4
+蒸鮮之味,39,1
+馬修嚴選,39,2
+ARTiS di Voce,39,3
+國際牌 panasonic,39,4
+微星科技 MSI,39,1
+波爾,39,2
+絲蘊 Syoss,38,3
+SkinLife,38,4
+唯潔雅,38,1
+華佗,38,2
+Farcent,38,3
+MILANI,38,4
+ZENN.TH 茲恩,38,1
+植村秀 shu uemura,38,2
+逸萱秀 Essentia,38,3
+RIMMEL 倫敦芮魅,38,4
+統一LP33,38,1
+KiKi,38,2
+ForBelovedOne寵愛之名,37,3
+PON PON MAN 澎澎Man,37,4
+The North Face,37,1
+Dr.Hsieh 達特醫,37,2
+聯想 Lenovo,37,3
+德國達麗Dalli,37,4
+More,37,1
+嬌生 Johnson's,37,2
+NARUKO 牛爾親研,37,3
+馬玉山,37,4
+HONEYSUCKLE,37,1
+蒂沐蝶 TIMOTEI,36,2
+Sapporo,36,3
+沙宣,36,4
+Siegal 思高,36,1
+瑞春,36,2
+POPPOP,36,3
+施華蔻 Schwarzkopf,36,4
+施巴,36,1
+極淨,35,2
+日落恩賜,35,3
+大甲乾麵,35,4
+西北,35,1
+VT CICA,35,2
+日本味王,35,3
+THREE,35,4
+PROFUSION,35,1
+安安,35,2
+培恩,35,3
+福樂一番鮮,35,4
+vivo,35,1
+廣鼎 INTOPIC,35,2
+理想 PERFECT,35,3
+MINON AminoMoist 蜜濃,35,4
+msi 微星,35,1
+聰明狗糧 IQ DOG,35,2
+冷泡茶,35,3
+Flormar,35,4
+慧心 SmartHeart,34,1
+真爽,34,2
+CeraVe 適樂膚,34,3
+KANGAROOS,34,4
+芮可 RICO,34,1
+CLARINS 克蘭詩,34,2
+COLOR CLUB,34,3
+日立 ITACHI,34,4
+克補,34,1
+四季,34,2
+嘉士伯,34,3
+CARMEX 小蜜媞,34,4
+巴黎萊雅 L'OREAL PARIS,34,1
+PRI,33,2
+友情牌,33,3
+WATSONS,33,4
+瑪恩吉 Monge,33,1
+牛乳石鹼,33,2
+賈以食日,33,3
+美粒果,33,4
+豐力富 Fernleaf,33,1
+POND'S 旁氏,33,2
+濃韻,33,3
+享食尚,33,4
+Sour3,32,1
+富維克 Volvic,32,2
+AQUA LABEL 水之印,32,3
+廣吉,32,4
+木村,32,1
+ETUDE奧斯卡,32,2
+貝利達,32,3
+Handme,32,4
+H2O,31,1
+ARDELL,31,2
+iROBOT,31,3
+比菲多,31,4
+麵大師,31,1
+HEINZ亨式,31,2
+樂邁,31,3
+Play Station,31,4
+美亞 MEYER,30,1
+AOC,30,2
+Loshi,30,3
+Jordan,30,4
+台農,30,1
+卡氛 KAFEN,30,2
+愛爾康,30,3
+Mdmmd 明洞國際,30,4
+農會,30,1
+玩美日記,30,2
+林鳳營特濃優格,30,3
+TTM 提提研,30,4
+渴望 Orijen,30,1
