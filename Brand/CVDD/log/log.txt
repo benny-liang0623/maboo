@@ -1,21 +1,163 @@
-2022-06-08 16:09:05,197 - root - INFO - Initialize context vectors.
-2022-06-08 16:11:24,230 - root - INFO - Context vectors initialized.
-2022-06-08 16:11:24,233 - root - INFO - Start training
-2022-06-08 16:13:42,985 - root - INFO - | Epoch: 001/050 || Train Loss: 0.161783 |
-2022-06-08 16:16:01,385 - root - INFO - | Epoch: 002/050 || Train Loss: 0.108161 |
-2022-06-08 16:18:19,402 - root - INFO - | Epoch: 003/050 || Train Loss: 0.104242 |
-2022-06-08 16:20:37,840 - root - INFO - | Epoch: 004/050 || Train Loss: 0.103817 |
-2022-06-08 16:22:55,794 - root - INFO - | Epoch: 005/050 || Train Loss: 0.103634 |
-2022-06-08 16:25:14,149 - root - INFO - | Epoch: 006/050 || Train Loss: 0.103578 |
-2022-06-08 16:27:32,165 - root - INFO - | Epoch: 007/050 || Train Loss: 0.103459 |
-2022-06-08 16:29:51,079 - root - INFO - | Epoch: 008/050 || Train Loss: 0.103434 |
-2022-06-08 16:32:10,713 - root - INFO - | Epoch: 009/050 || Train Loss: 0.103364 |
-2022-06-08 16:34:29,285 - root - INFO - | Epoch: 010/050 || Train Loss: 0.103337 |
-2022-06-08 16:34:29,287 - root - INFO -   Temperature alpha scheduler: new alpha is 0.0001
-2022-06-08 16:36:46,513 - root - INFO - | Epoch: 011/050 || Train Loss: 0.103272 |
-2022-06-08 16:39:03,673 - root - INFO - | Epoch: 012/050 || Train Loss: 0.103237 |
-2022-06-08 16:41:21,531 - root - INFO - | Epoch: 013/050 || Train Loss: 0.103274 |
-2022-06-08 16:43:39,384 - root - INFO - | Epoch: 014/050 || Train Loss: 0.103217 |
-2022-06-08 16:45:56,741 - root - INFO - | Epoch: 015/050 || Train Loss: 0.103196 |
-2022-06-08 16:48:14,298 - root - INFO - | Epoch: 016/050 || Train Loss: 0.103191 |
-2022-06-08 16:50:30,857 - root - INFO - | Epoch: 017/050 || Train Loss: 0.103148 |
+2022-06-08 21:30:58,046 - root - INFO - Initialize context vectors.
+2022-06-08 21:34:20,779 - root - INFO - Context vectors initialized.
+2022-06-08 21:34:20,790 - root - INFO - Start training
+2022-06-08 21:37:39,481 - root - INFO - | Epoch: 001/150 || Train Loss: 0.305683 |
+2022-06-08 21:40:58,502 - root - INFO - | Epoch: 002/150 || Train Loss: 0.250985 |
+2022-06-08 21:44:16,781 - root - INFO - | Epoch: 003/150 || Train Loss: 0.250837 |
+2022-06-08 21:47:35,592 - root - INFO - | Epoch: 004/150 || Train Loss: 0.250842 |
+2022-06-08 21:51:04,604 - root - INFO - | Epoch: 005/150 || Train Loss: 0.250835 |
+2022-06-08 21:54:26,508 - root - INFO - | Epoch: 006/150 || Train Loss: 0.250825 |
+2022-06-08 21:57:40,311 - root - INFO - | Epoch: 007/150 || Train Loss: 0.250823 |
+2022-06-08 22:00:54,363 - root - INFO - | Epoch: 008/150 || Train Loss: 0.250827 |
+2022-06-08 22:04:08,738 - root - INFO - | Epoch: 009/150 || Train Loss: 0.250819 |
+2022-06-08 22:07:22,904 - root - INFO - | Epoch: 010/150 || Train Loss: 0.250819 |
+2022-06-08 22:10:37,120 - root - INFO - | Epoch: 011/150 || Train Loss: 0.250819 |
+2022-06-08 22:13:51,246 - root - INFO - | Epoch: 012/150 || Train Loss: 0.250817 |
+2022-06-08 22:17:05,371 - root - INFO - | Epoch: 013/150 || Train Loss: 0.250814 |
+2022-06-08 22:20:19,561 - root - INFO - | Epoch: 014/150 || Train Loss: 0.250812 |
+2022-06-08 22:23:33,732 - root - INFO - | Epoch: 015/150 || Train Loss: 0.250806 |
+2022-06-08 22:26:47,887 - root - INFO - | Epoch: 016/150 || Train Loss: 0.250810 |
+2022-06-08 22:30:01,947 - root - INFO - | Epoch: 017/150 || Train Loss: 0.250800 |
+2022-06-08 22:33:15,953 - root - INFO - | Epoch: 018/150 || Train Loss: 0.250800 |
+2022-06-08 22:36:29,979 - root - INFO - | Epoch: 019/150 || Train Loss: 0.250794 |
+2022-06-08 22:39:44,861 - root - INFO - | Epoch: 020/150 || Train Loss: 0.250790 |
+2022-06-08 22:43:03,368 - root - INFO - | Epoch: 021/150 || Train Loss: 0.250788 |
+2022-06-08 22:46:20,245 - root - INFO - | Epoch: 022/150 || Train Loss: 0.250788 |
+2022-06-08 22:49:39,543 - root - INFO - | Epoch: 023/150 || Train Loss: 0.250780 |
+2022-06-08 22:52:57,734 - root - INFO - | Epoch: 024/150 || Train Loss: 0.250792 |
+2022-06-08 22:56:15,711 - root - INFO - | Epoch: 025/150 || Train Loss: 0.250772 |
+2022-06-08 22:56:15,711 - root - INFO -   LR scheduler: new learning rate is 1.0000000000000004e-08
+2022-06-08 22:59:34,107 - root - INFO - | Epoch: 026/150 || Train Loss: 0.250770 |
+2022-06-08 23:02:53,198 - root - INFO - | Epoch: 027/150 || Train Loss: 0.250762 |
+2022-06-08 23:06:12,003 - root - INFO - | Epoch: 028/150 || Train Loss: 0.250773 |
+2022-06-08 23:09:29,476 - root - INFO - | Epoch: 029/150 || Train Loss: 0.250767 |
+2022-06-08 23:12:47,177 - root - INFO - | Epoch: 030/150 || Train Loss: 0.250769 |
+2022-06-08 23:12:47,177 - root - INFO -   Temperature alpha scheduler: new alpha is 0.0001
+2022-06-08 23:16:05,272 - root - INFO - | Epoch: 031/150 || Train Loss: 0.250758 |
+2022-06-08 23:19:23,729 - root - INFO - | Epoch: 032/150 || Train Loss: 0.250757 |
+2022-06-08 23:22:44,565 - root - INFO - | Epoch: 033/150 || Train Loss: 0.250754 |
+2022-06-08 23:26:02,077 - root - INFO - | Epoch: 034/150 || Train Loss: 0.250758 |
+2022-06-08 23:29:18,514 - root - INFO - | Epoch: 035/150 || Train Loss: 0.250748 |
+2022-06-08 23:32:36,325 - root - INFO - | Epoch: 036/150 || Train Loss: 0.250744 |
+2022-06-08 23:35:53,124 - root - INFO - | Epoch: 037/150 || Train Loss: 0.250742 |
+2022-06-08 23:39:10,078 - root - INFO - | Epoch: 038/150 || Train Loss: 0.250735 |
+2022-06-08 23:42:28,137 - root - INFO - | Epoch: 039/150 || Train Loss: 0.250737 |
+2022-06-08 23:45:46,546 - root - INFO - | Epoch: 040/150 || Train Loss: 0.250735 |
+2022-06-08 23:49:05,061 - root - INFO - | Epoch: 041/150 || Train Loss: 0.250737 |
+2022-06-08 23:52:22,517 - root - INFO - | Epoch: 042/150 || Train Loss: 0.250726 |
+2022-06-08 23:55:40,289 - root - INFO - | Epoch: 043/150 || Train Loss: 0.250717 |
+2022-06-08 23:58:57,209 - root - INFO - | Epoch: 044/150 || Train Loss: 0.250724 |
+2022-06-09 00:02:16,531 - root - INFO - | Epoch: 045/150 || Train Loss: 0.250714 |
+2022-06-09 00:05:37,758 - root - INFO - | Epoch: 046/150 || Train Loss: 0.250712 |
+2022-06-09 00:08:59,797 - root - INFO - | Epoch: 047/150 || Train Loss: 0.250704 |
+2022-06-09 00:12:19,820 - root - INFO - | Epoch: 048/150 || Train Loss: 0.250695 |
+2022-06-09 00:15:39,900 - root - INFO - | Epoch: 049/150 || Train Loss: 0.250703 |
+2022-06-09 00:18:59,869 - root - INFO - | Epoch: 050/150 || Train Loss: 0.250696 |
+2022-06-09 00:18:59,869 - root - INFO -   LR scheduler: new learning rate is 1.0000000000000004e-08
+2022-06-09 00:22:20,613 - root - INFO - | Epoch: 051/150 || Train Loss: 0.250691 |
+2022-06-09 00:25:42,196 - root - INFO - | Epoch: 052/150 || Train Loss: 0.250689 |
+2022-06-09 00:29:05,138 - root - INFO - | Epoch: 053/150 || Train Loss: 0.250685 |
+2022-06-09 00:32:25,604 - root - INFO - | Epoch: 054/150 || Train Loss: 0.250680 |
+2022-06-09 00:35:43,688 - root - INFO - | Epoch: 055/150 || Train Loss: 0.250679 |
+2022-06-09 00:38:58,832 - root - INFO - | Epoch: 056/150 || Train Loss: 0.250676 |
+2022-06-09 00:42:13,745 - root - INFO - | Epoch: 057/150 || Train Loss: 0.250669 |
+2022-06-09 00:45:27,718 - root - INFO - | Epoch: 058/150 || Train Loss: 0.250666 |
+2022-06-09 00:48:41,796 - root - INFO - | Epoch: 059/150 || Train Loss: 0.250670 |
+2022-06-09 00:51:55,741 - root - INFO - | Epoch: 060/150 || Train Loss: 0.250665 |
+2022-06-09 00:51:55,742 - root - INFO -   Temperature alpha scheduler: new alpha is 0.001
+2022-06-09 00:55:09,820 - root - INFO - | Epoch: 061/150 || Train Loss: 0.250658 |
+2022-06-09 00:58:23,913 - root - INFO - | Epoch: 062/150 || Train Loss: 0.250658 |
+2022-06-09 01:01:38,095 - root - INFO - | Epoch: 063/150 || Train Loss: 0.250654 |
+2022-06-09 01:04:52,317 - root - INFO - | Epoch: 064/150 || Train Loss: 0.250656 |
+2022-06-09 01:08:06,478 - root - INFO - | Epoch: 065/150 || Train Loss: 0.250645 |
+2022-06-09 01:11:20,606 - root - INFO - | Epoch: 066/150 || Train Loss: 0.250644 |
+2022-06-09 01:14:34,703 - root - INFO - | Epoch: 067/150 || Train Loss: 0.250635 |
+2022-06-09 01:17:48,735 - root - INFO - | Epoch: 068/150 || Train Loss: 0.250638 |
+2022-06-09 01:21:02,753 - root - INFO - | Epoch: 069/150 || Train Loss: 0.250643 |
+2022-06-09 01:24:16,952 - root - INFO - | Epoch: 070/150 || Train Loss: 0.250635 |
+2022-06-09 01:27:31,021 - root - INFO - | Epoch: 071/150 || Train Loss: 0.250628 |
+2022-06-09 01:30:45,131 - root - INFO - | Epoch: 072/150 || Train Loss: 0.250627 |
+2022-06-09 01:34:00,309 - root - INFO - | Epoch: 073/150 || Train Loss: 0.250622 |
+2022-06-09 01:37:27,120 - root - INFO - | Epoch: 074/150 || Train Loss: 0.250618 |
+2022-06-09 01:40:55,376 - root - INFO - | Epoch: 075/150 || Train Loss: 0.250617 |
+2022-06-09 01:40:55,377 - root - INFO -   LR scheduler: new learning rate is 1.0000000000000004e-08
+2022-06-09 01:44:20,322 - root - INFO - | Epoch: 076/150 || Train Loss: 0.250624 |
+2022-06-09 01:47:45,220 - root - INFO - | Epoch: 077/150 || Train Loss: 0.250614 |
+2022-06-09 01:50:59,258 - root - INFO - | Epoch: 078/150 || Train Loss: 0.250603 |
+2022-06-09 01:54:13,143 - root - INFO - | Epoch: 079/150 || Train Loss: 0.250611 |
+2022-06-09 01:57:27,036 - root - INFO - | Epoch: 080/150 || Train Loss: 0.250596 |
+2022-06-09 02:00:41,175 - root - INFO - | Epoch: 081/150 || Train Loss: 0.250592 |
+2022-06-09 02:03:54,892 - root - INFO - | Epoch: 082/150 || Train Loss: 0.250592 |
+2022-06-09 02:07:08,698 - root - INFO - | Epoch: 083/150 || Train Loss: 0.250588 |
+2022-06-09 02:10:22,527 - root - INFO - | Epoch: 084/150 || Train Loss: 0.250593 |
+2022-06-09 02:13:36,418 - root - INFO - | Epoch: 085/150 || Train Loss: 0.250595 |
+2022-06-09 02:16:50,227 - root - INFO - | Epoch: 086/150 || Train Loss: 0.250591 |
+2022-06-09 02:20:04,233 - root - INFO - | Epoch: 087/150 || Train Loss: 0.250586 |
+2022-06-09 02:23:18,172 - root - INFO - | Epoch: 088/150 || Train Loss: 0.250575 |
+2022-06-09 02:26:32,218 - root - INFO - | Epoch: 089/150 || Train Loss: 0.250575 |
+2022-06-09 02:29:46,014 - root - INFO - | Epoch: 090/150 || Train Loss: 0.250568 |
+2022-06-09 02:29:46,015 - root - INFO -   Temperature alpha scheduler: new alpha is 0.01
+2022-06-09 02:32:59,860 - root - INFO - | Epoch: 091/150 || Train Loss: 0.250561 |
+2022-06-09 02:36:13,697 - root - INFO - | Epoch: 092/150 || Train Loss: 0.250565 |
+2022-06-09 02:39:27,591 - root - INFO - | Epoch: 093/150 || Train Loss: 0.250548 |
+2022-06-09 02:42:41,476 - root - INFO - | Epoch: 094/150 || Train Loss: 0.250545 |
+2022-06-09 02:45:55,407 - root - INFO - | Epoch: 095/150 || Train Loss: 0.250538 |
+2022-06-09 02:49:09,265 - root - INFO - | Epoch: 096/150 || Train Loss: 0.250537 |
+2022-06-09 02:52:23,273 - root - INFO - | Epoch: 097/150 || Train Loss: 0.250540 |
+2022-06-09 02:55:36,950 - root - INFO - | Epoch: 098/150 || Train Loss: 0.250541 |
+2022-06-09 02:58:50,730 - root - INFO - | Epoch: 099/150 || Train Loss: 0.250536 |
+2022-06-09 03:02:04,381 - root - INFO - | Epoch: 100/150 || Train Loss: 0.250533 |
+2022-06-09 03:02:04,382 - root - INFO -   LR scheduler: new learning rate is 1.0000000000000004e-08
+2022-06-09 03:05:18,440 - root - INFO - | Epoch: 101/150 || Train Loss: 0.250520 |
+2022-06-09 03:08:32,195 - root - INFO - | Epoch: 102/150 || Train Loss: 0.250528 |
+2022-06-09 03:11:46,046 - root - INFO - | Epoch: 103/150 || Train Loss: 0.250525 |
+2022-06-09 03:14:59,880 - root - INFO - | Epoch: 104/150 || Train Loss: 0.250520 |
+2022-06-09 03:18:13,687 - root - INFO - | Epoch: 105/150 || Train Loss: 0.250511 |
+2022-06-09 03:21:27,399 - root - INFO - | Epoch: 106/150 || Train Loss: 0.250509 |
+2022-06-09 03:24:41,236 - root - INFO - | Epoch: 107/150 || Train Loss: 0.250508 |
+2022-06-09 03:27:54,980 - root - INFO - | Epoch: 108/150 || Train Loss: 0.250505 |
+2022-06-09 03:31:08,766 - root - INFO - | Epoch: 109/150 || Train Loss: 0.250501 |
+2022-06-09 03:34:22,510 - root - INFO - | Epoch: 110/150 || Train Loss: 0.250510 |
+2022-06-09 03:37:36,483 - root - INFO - | Epoch: 111/150 || Train Loss: 0.250504 |
+2022-06-09 03:40:50,285 - root - INFO - | Epoch: 112/150 || Train Loss: 0.250496 |
+2022-06-09 03:44:04,278 - root - INFO - | Epoch: 113/150 || Train Loss: 0.250492 |
+2022-06-09 03:47:18,185 - root - INFO - | Epoch: 114/150 || Train Loss: 0.250487 |
+2022-06-09 03:50:32,337 - root - INFO - | Epoch: 115/150 || Train Loss: 0.250483 |
+2022-06-09 03:53:46,676 - root - INFO - | Epoch: 116/150 || Train Loss: 0.250483 |
+2022-06-09 03:57:00,561 - root - INFO - | Epoch: 117/150 || Train Loss: 0.250484 |
+2022-06-09 04:00:14,782 - root - INFO - | Epoch: 118/150 || Train Loss: 0.250476 |
+2022-06-09 04:03:28,604 - root - INFO - | Epoch: 119/150 || Train Loss: 0.250471 |
+2022-06-09 04:06:42,277 - root - INFO - | Epoch: 120/150 || Train Loss: 0.250469 |
+2022-06-09 04:06:42,277 - root - INFO -   Temperature alpha scheduler: new alpha is 0.1
+2022-06-09 04:09:56,012 - root - INFO - | Epoch: 121/150 || Train Loss: 0.250391 |
+2022-06-09 04:13:09,866 - root - INFO - | Epoch: 122/150 || Train Loss: 0.250386 |
+2022-06-09 04:16:23,634 - root - INFO - | Epoch: 123/150 || Train Loss: 0.250383 |
+2022-06-09 04:19:37,339 - root - INFO - | Epoch: 124/150 || Train Loss: 0.250377 |
+2022-06-09 04:22:51,237 - root - INFO - | Epoch: 125/150 || Train Loss: 0.250375 |
+2022-06-09 04:22:51,237 - root - INFO -   LR scheduler: new learning rate is 1.0000000000000004e-08
+2022-06-09 04:26:04,908 - root - INFO - | Epoch: 126/150 || Train Loss: 0.250378 |
+2022-06-09 04:29:19,179 - root - INFO - | Epoch: 127/150 || Train Loss: 0.250376 |
+2022-06-09 04:32:33,037 - root - INFO - | Epoch: 128/150 || Train Loss: 0.250373 |
+2022-06-09 04:35:47,142 - root - INFO - | Epoch: 129/150 || Train Loss: 0.250368 |
+2022-06-09 04:39:00,824 - root - INFO - | Epoch: 130/150 || Train Loss: 0.250359 |
+2022-06-09 04:42:14,494 - root - INFO - | Epoch: 131/150 || Train Loss: 0.250369 |
+2022-06-09 04:45:28,244 - root - INFO - | Epoch: 132/150 || Train Loss: 0.250358 |
+2022-06-09 04:48:42,004 - root - INFO - | Epoch: 133/150 || Train Loss: 0.250353 |
+2022-06-09 04:51:55,910 - root - INFO - | Epoch: 134/150 || Train Loss: 0.250351 |
+2022-06-09 04:55:10,132 - root - INFO - | Epoch: 135/150 || Train Loss: 0.250348 |
+2022-06-09 04:58:23,858 - root - INFO - | Epoch: 136/150 || Train Loss: 0.250342 |
+2022-06-09 05:01:37,652 - root - INFO - | Epoch: 137/150 || Train Loss: 0.250349 |
+2022-06-09 05:04:51,174 - root - INFO - | Epoch: 138/150 || Train Loss: 0.250342 |
+2022-06-09 05:08:04,904 - root - INFO - | Epoch: 139/150 || Train Loss: 0.250331 |
+2022-06-09 05:11:18,570 - root - INFO - | Epoch: 140/150 || Train Loss: 0.250332 |
+2022-06-09 05:14:32,344 - root - INFO - | Epoch: 141/150 || Train Loss: 0.250330 |
+2022-06-09 05:17:46,109 - root - INFO - | Epoch: 142/150 || Train Loss: 0.250319 |
+2022-06-09 05:20:59,962 - root - INFO - | Epoch: 143/150 || Train Loss: 0.250323 |
+2022-06-09 05:24:13,702 - root - INFO - | Epoch: 144/150 || Train Loss: 0.250322 |
+2022-06-09 05:27:27,488 - root - INFO - | Epoch: 145/150 || Train Loss: 0.250320 |
+2022-06-09 05:30:41,482 - root - INFO - | Epoch: 146/150 || Train Loss: 0.250314 |
+2022-06-09 05:33:55,316 - root - INFO - | Epoch: 147/150 || Train Loss: 0.250309 |
+2022-06-09 05:37:09,169 - root - INFO - | Epoch: 148/150 || Train Loss: 0.250314 |
+2022-06-09 05:40:23,179 - root - INFO - | Epoch: 149/150 || Train Loss: 0.250308 |
+2022-06-09 05:43:37,014 - root - INFO - | Epoch: 150/150 || Train Loss: 0.250302 |
+2022-06-09 05:43:37,015 - root - INFO - Finish training

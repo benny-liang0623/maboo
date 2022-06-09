@@ -90,7 +90,7 @@ class CVDDTrainer(BaseTrainer):
                 alpha_i += 1
             
             if epoch in self.lr_milestones:
-                logger.info(f'  LR scheduler: new learning rate is {scheduler.get_lr()[0]}')
+                logger.info(f'  LR scheduler: new learning rate is {scheduler.get_last_lr()[0]}')
             
             epoch_loss = 0.0
             n_batches = 0
@@ -164,7 +164,6 @@ class CVDDTrainer(BaseTrainer):
                 idx = data['index']
                 ids = data['ids'].to(self.device)
                 mask = data['mask'].to(self.device)
-                targets = data['targets'].to(self.device)
                 
                 cosine_dists, context_weights, A = net(ids, mask)
                 scores = context_weights * cosine_dists
@@ -182,7 +181,6 @@ class CVDDTrainer(BaseTrainer):
                 dists_per_head += (cosine_dists.cpu().data.numpy(),)
                 ad_scores = torch.mean(cosine_dists, dim=1)
                 idx_label_score_head += list(zip(idx,
-                                                 targets.cpu().data.numpy().tolist(),
                                                  ad_scores.cpu().data.numpy().tolist(),
                                                  best_att_head.cpu().data.numpy().tolist()))
                 att_weights += A[range(len(idx)), best_att_head].cpu().data.numpy().tolist()
@@ -193,44 +191,40 @@ class CVDDTrainer(BaseTrainer):
                 epoch_loss += loss.item()
                 n_batches +=1
         
-        self.test_dists = np.concatenate(dists_per_head)
-        self.test_att_matrix = att_matrix / n_batches
-        self.test_att_matrix = self.test_att_matrix.tolist()
+        # self.test_dists = np.concatenate(dists_per_head)
+        # self.test_att_matrix = att_matrix / n_batches
+        # self.test_att_matrix = self.test_att_matrix.tolist()
         
-        self.test_dists = np.concatenate(dists_per_head)
-        self.test_att_matrix = att_matrix / n_batches
-        self.test_att_matrix = self.test_att_matrix.tolist()
+        # self.test_scores = idx_label_score_head
+        # self.test_att_weights = att_weights
         
-        self.test_scores = idx_label_score_head
-        self.test_att_weights = att_weights
+        # # Compute AUC
+        # _, labels, scores, _ = zip(*idx_label_score_head)
+        # labels = np.array(labels)
+        # scores = np.array(scores)
         
-        # Compute AUC
-        _, labels, scores, _ = zip(*idx_label_score_head)
-        labels = np.array(labels)
-        scores = np.array(scores)
+        # if np.sum(labels) > 0:
+        #     best_context = None
+        #     if ad_score == 'context_dist_mean':
+        #         self.test_auc = roc_auc_score(labels, scores)
+        #     if ad_score == 'context_best':
+        #         self.test_auc = 0.0
+        #         for context in range(attention_heads):
+        #             auc_candidate = roc_auc_score(labels, self.test_dists[:, context])
+        #             print(auc_candidate)
+        #             if auc_candidate > self.test_auc:
+        #                 self.test_auc = auc_candidate
+        #                 best_context = context
+        #             else:
+        #                 pass
+        # else:
+        #     best_context = None
+        #     self.test_auc = 0.0
         
-        if np.sum(labels) > 0:
-            best_context = None
-            if ad_score == 'context_dist_mean':
-                self.test_auc = roc_auc_score(labels, scores)
-            if ad_score == 'context_best':
-                self.test_auc = 0.0
-                for context in range(attention_heads):
-                    auc_candidate = roc_auc_score(labels, self.test_dists[:, context])
-                    print(auc_candidate)
-                    if auc_candidate > self.test_auc:
-                        self.test_auc = auc_candidate
-                        best_context = context
-                    else:
-                        pass
-        else:
-            best_context = None
-            self.test_auc = 0.0
-        
-        logger.info(f'Test Loss: {(epoch_loss/n_batches):.6f}')
-        logger.info(f'Test AUC: {(100*self.test_auc):.2f}')
-        logger.info(f'Test Best Context: {best_context}')
-        logger.info('Finished validation')
+        # logger.info(f'Test Loss: {(epoch_loss/n_batches):.6f}')
+        # logger.info(f'Test AUC: {(100*self.test_auc):.2f}')
+        # logger.info(f'Test Best Context: {best_context}')
+        # logger.info('Finished validation')
 
 
 def initialize_context_vectors(net, train_loader, device):
@@ -335,12 +329,11 @@ class CVDD(object):
 
     def save_model(self, export_path):
         """Save CVDD model to export_path."""
-        torch.save(self.net.state_dict(), f'/{export_path}/model.ckpt')
+        torch.save(self.net.state_dict(), f'{export_path}\\model.ckpt')
 
-    def load_model(self, import_path, device: str = 'cuda'):
+    def load_model(self, import_path):
         """Load CVDD model from import_path."""
-        self.net = torch.load(f'{import_path}',
-                              map_location=device)
+        self.net.load_state_dict(torch.load(f'{import_path}'))
 
     def save_results(self, export_json):
         """Save results dict to a JSON-file."""
