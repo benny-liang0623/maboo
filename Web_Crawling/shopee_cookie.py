@@ -20,8 +20,8 @@ browser.get(url)
 
 username_input = browser.find_elements_by_name('email')[0]
 password_input = browser.find_elements_by_name('pass')[0]
-username_input.send_keys("jk456123@yahoo.com.tw")  #輸入FB信箱 qir20458@jeoce.com
-password_input.send_keys("ilovebeichi")  #輸入FB密碼 shopee123
+username_input.send_keys("")  #輸入FB信箱 qir20458@jeoce.com
+password_input.send_keys("")  #輸入FB密碼 shopee123
 login_click = browser.find_elements_by_name('login')[0]
 login_click.click()
 time.sleep(10)
