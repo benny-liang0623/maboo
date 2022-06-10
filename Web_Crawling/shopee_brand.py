@@ -22,36 +22,46 @@ for cookie in cookies:
 
 import pandas as pd
 from tqdm import tqdm
-other = pd.read_csv("Brand/BCE/other.csv", encoding="utf-8", index_col="Unnamed: 0")
+import pickle
 
-keyword_list = ['韓國abib口香糖面膜27ml積雪草']
+other = pd.read_csv("C:/Users/Meng-Chieh/Documents/GitHub/maboo/Brand/BCE/3_result/other_0.85.csv", encoding="utf-8", index_col="Unnamed: 0")
+
+keyword_list = other['name']
 brand_list = []
 for keyword in tqdm(keyword_list):
     try: 
         # go to search page
         browser.get(url)
-        time.sleep(1)
+        time.sleep(0.5)
 
         # search product
         search_bar = browser.find_elements_by_class_name("shopee-searchbar-input__input")[0]
         search_bar.send_keys(keyword)
-        time.sleep(1)
+        time.sleep(0.5)
         search_button = browser.find_elements_by_class_name("shopee-searchbar__search-button")[0]
         search_button.click()
         time.sleep(1)
 
         # proucts layout
-        prouduct_href = browser.find_elements_by_xpath('//a[@data-sqe="link"]')[4]
-        prouduct_href.click()
-        time.sleep(1)
+        prouduct_href = browser.find_elements_by_xpath('//a[@data-sqe="link"]')[4:7]
+        prouduct_href = [href.get_attribute('href') for href in prouduct_href]
 
-        # product page
-        brand = browser.find_element_by_class_name('kQy1zo').text
-        brand_list.append(brand)
+        for href in prouduct_href:
+            try:
+                browser.get(href)
+                time.sleep(1)
+                brand = browser.find_element_by_class_name('kQy1zo').text
+                brand_list.append(brand)
+                break
+            except:
+                pass
     except:
         brand_list.append(None)
+
+    with open('brand_list.pkl', 'wb') as f:
+        pickle.dump(brand_list, f)
     time.sleep(randint(1,2))
     
-# other["shopee"] = brand_list
-# other.to_csv("Brand/BCE/other_shopee.csv", encoding="utf-8")
+other["shopee"] = brand_list
+other.to_csv("C:/Users/Meng-Chieh/Documents/GitHub/maboo/Brand/BCE/3_result/other_shopee.csv", encoding="utf-8")
 print(brand_list)
