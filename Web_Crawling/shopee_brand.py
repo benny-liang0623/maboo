@@ -56,47 +56,65 @@ import pandas as pd
 from tqdm import tqdm
 import pickle
 
-other = pd.read_csv("other2_1.csv", encoding="utf-8", index_col="Unnamed: 0")
+other = pd.read_csv("other2.csv", encoding="utf-8", index_col="Unnamed: 0")
 
 keyword_list = other['name']
-brand_list = []
-for keyword in tqdm(keyword_list):
+
+with open('all_brand_list.pkl', 'rb') as f:
+    brand_list = pickle.load(f)
+
+count = 0
+
+for index, keyword in enumerate(tqdm(keyword_list)):
+
+    if brand_list[index] is not None:
+        continue
+    
     brand=None
 
-    try: 
-        # go to search page
-        browser.get(url)
-        time.sleep(0.5)
+    if '酒' in keyword or '菸' in keyword:
+        continue
+    else:
+        try: 
+            # go to search page
+            browser.get(url)
+            time.sleep(0.5)
 
-        # search product
-        search_bar = browser.find_elements_by_class_name("shopee-searchbar-input__input")[0]
-        search_bar.send_keys(keyword)
-        time.sleep(0.5)
-        search_button = browser.find_elements_by_class_name("shopee-searchbar__search-button")[0]
-        search_button.click()
-        time.sleep(1)
+            # search product
+            search_bar = browser.find_elements_by_class_name("shopee-searchbar-input__input")[0]
+            search_bar.send_keys(keyword)
+            time.sleep(0.5)
+            search_button = browser.find_elements_by_class_name("shopee-searchbar__search-button")[0]
+            search_button.click()
+            time.sleep(1)
 
-        # proucts layout
-        prouduct_href = browser.find_elements_by_xpath('//a[@data-sqe="link"]')[4:7]
-        prouduct_href = [href.get_attribute('href') for href in prouduct_href]
+            # proucts layout
+            prouduct_href = browser.find_elements_by_xpath('//a[@data-sqe="link"]')[5:7]
+            prouduct_href = [href.get_attribute('href') for href in prouduct_href]
 
-        for href in prouduct_href:
-            try:
-                browser.get(href)
-                time.sleep(1)
-                brand = browser.find_element_by_class_name('kQy1zo').text
-                break
-            except:
-                pass
-    except:
-        pass
+            for href in prouduct_href:
+                try:
+                    browser.get(href)
+                    time.sleep(1)
+                    brand = browser.find_element_by_class_name('kQy1zo').text
+                    if brand == "COACH 蔻馳":
+                        brand = None
+                        break
+                    if brand is not None:
+                        break
+                except:
+                    pass
+        except:
+            pass
 
-    brand_list.append(brand)
+    if brand is not None:
+        brand_list[index] = brand
+        count+=1
+        with open('all_brand_list.pkl', 'wb') as f:
+            pickle.dump(brand_list, f)
 
-    with open('brand_list_1.pkl', 'wb') as f:
-        pickle.dump(brand_list, f)
     time.sleep(randint(1,2))
     
 other["shopee"] = brand_list
-other.to_csv("other_shopee_1.csv", encoding="utf-8")
-print(brand_list)
+other.to_csv("new_shopee.csv", encoding="utf-8")
+print(count)
