@@ -191,14 +191,14 @@ class CVDDTrainer(BaseTrainer):
                 epoch_loss += loss.item()
                 n_batches +=1
         
-        # self.test_dists = np.concatenate(dists_per_head)
-        # self.test_att_matrix = att_matrix / n_batches
-        # self.test_att_matrix = self.test_att_matrix.tolist()
+        self.test_dists = np.concatenate(dists_per_head)
+        self.test_att_matrix = att_matrix / n_batches
+        self.test_att_matrix = self.test_att_matrix.tolist()
         
-        # self.test_scores = idx_label_score_head
-        # self.test_att_weights = att_weights
+        self.test_scores = idx_label_score_head
+        self.test_att_weights = att_weights
         
-        # # Compute AUC
+        # Compute AUC
         # _, labels, scores, _ = zip(*idx_label_score_head)
         # labels = np.array(labels)
         # scores = np.array(scores)
@@ -221,10 +221,10 @@ class CVDDTrainer(BaseTrainer):
         #     best_context = None
         #     self.test_auc = 0.0
         
-        # logger.info(f'Test Loss: {(epoch_loss/n_batches):.6f}')
+        logger.info(f'Test Loss: {(epoch_loss/n_batches):.6f}')
         # logger.info(f'Test AUC: {(100*self.test_auc):.2f}')
         # logger.info(f'Test Best Context: {best_context}')
-        # logger.info('Finished validation')
+        logger.info('Finished validation')
 
 
 def initialize_context_vectors(net, train_loader, device):

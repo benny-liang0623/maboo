@@ -7,7 +7,7 @@ import pandas as pd
 from transformers import BertTokenizer
 from torch.utils.data import DataLoader
 from training_pipe import CVDD
-from data_preprocess import BrandDataset
+from data_preprocess import CVDDDataset
 from utils import print_text_samples
 
 
@@ -31,14 +31,14 @@ lr = 0.001
 n_epochs = 150
 batch_size = 32
 num_workers = 0
-lr_milestones = [25, 50, 75, 100, 125]
+lr_milestones = [25, 50, 75,  100, 125]
 lambda_p = 1.0
 alpha_scheduler = 'logarithmic'
 weight_decay = 0.5e-6
-load_model = 'Brand\CVDD\saved_model\model.ckpt'
+load_model = None # 'Brand\CVDD\saved_model\model.ckpt'
 
 # Prepare data
-train_data = pd.read_csv('G:/Code/Python/GitHub/maboo/Brand/BrandData/brand_final.csv').loc[:, ['name', 'brand']]
+train_data = pd.read_csv('G:/Code/Python/GitHub/maboo/Brand/BrandData/孟頡清的/train_brand.csv').loc[:, ['name', 'brand']]
 # test_data = pd.read_csv('G:/Code/Python/GitHub/maboo/Brand/資料/test_brand.csv').loc[:, ['name', 'brand']]
 valid_brand = [i for i in set(train_data['brand'].to_list())]
 
@@ -55,10 +55,10 @@ y_train = train_data[train_data['brand'] == 1]['brand']
 # y_valid = data[data['brand'] == 0]['brand']
 
 tokenizer = BertTokenizer.from_pretrained(pretrained_model_name)
-train_dataset = BrandDataset(X_train, y_train, tokenizer, 256)
-# valid_dataset = BrandDataset(X_valid, y_valid, tokenizer, 512)
-train_loader = DataLoader(train_dataset, batch_size=512, shuffle=True, num_workers=num_workers)
-# valid_loader = DataLoader(valid_dataset, batch_size=32)
+train_dataset = CVDDDataset(X_train, tokenizer, 256)
+valid_dataset = CVDDDataset(X_train, tokenizer, 256)
+train_loader = DataLoader(valid_dataset, batch_size=512, shuffle=True, num_workers=num_workers)
+valid_loader = DataLoader(valid_dataset, batch_size=512)
 
 cvdd = CVDD(ad_score='context_dist_mean')
 cvdd.set_network(pretrained_model_name=pretrained_model_name,
@@ -67,16 +67,18 @@ cvdd.set_network(pretrained_model_name=pretrained_model_name,
 
 # Load model
 if load_model:
-    cvdd.load_model(load_model, device=device)
+    cvdd.load_model(load_model)
 
 # Train model
 cvdd.train(train_loader, lr=lr, n_epochs=n_epochs, lr_milestones=lr_milestones, lambda_p=lambda_p,
            alpha_scheduler=alpha_scheduler, weight_decay=weight_decay, device=device)
 
+cvdd.save_model('Brand\\CVDD\\log\\')
+
 # Test model
 # cvdd.test(valid_loader, device=device)
 
-# Print most anomalous and most normal test samples
+# # Print most anomalous and most normal test samples
 # indices, labels, scores, heads = zip(*cvdd.results['test_scores'])
 # indices, scores = np.array(indices), np.array(scores)
 # sort_idx = np.argsort(scores).tolist()  # sorted from lowest to highest anomaly score
@@ -97,4 +99,3 @@ cvdd.train(train_loader, lr=lr, n_epochs=n_epochs, lr_milestones=lr_milestones, 
 #                    att_heads=heads_outlier, weights=att_weights_outlier, title='Most anomalous examples')
 
 cvdd.save_results('Brand\\CVDD\\log'+'/results.json')
-cvdd.save_model('Brand\\CVDD\\log\\')
